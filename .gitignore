@@ -5,7 +5,7 @@
 
 # do not ignore Scripts, Resources, Scenes Directory
 !/Assets/Scripts
-#!/Assets/Resources
+!/Assets/Resources
 !/Assets/Scenes
 !/Assets/Materials
 !/Assets/Animations

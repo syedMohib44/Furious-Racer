@@ -60,7 +60,7 @@ public class SceneryPool : MonoBehaviour
             else
             {
                 this.z += z;
-                if (probablity < 0.5f)
+                if (i % 2 == 0)
                     this.x = xLeft;
                 else
                     this.x = xRight;

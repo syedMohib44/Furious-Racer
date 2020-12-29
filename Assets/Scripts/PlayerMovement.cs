@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private float rotateTo, tempRot, maxSpeed = 8f, accelertion = 0;
     private float maxHeight = 4.9f, minHeight = 0.6f;
-    private int scored = 0;                                
+    private int scored = 0;
     private Text scorePopUp, scoreText;
     private float leftLimit = -10.0f, rightLimit = 10.0f, leftSpeed, rightSpeed; //TODO: Need to add these in code
     Color c;
@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
         //if (transform.position.y < 0.1 && jumped == false)
         //  jumped = true;
-        
+
     }
 
     void FixedUpdate()
@@ -117,6 +117,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (transform.position.x > 0)
                     transform.Translate(-absVal * Time.deltaTime, 0, 0);
+                else
+                    transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
             }
         }
 

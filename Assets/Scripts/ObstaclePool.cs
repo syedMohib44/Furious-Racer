@@ -63,7 +63,7 @@ public class ObstaclePool : MonoBehaviour
             }
             obj.transform.position = new Vector3(this.x, this.y, z);
 
-            if (poolPrefab.prefab.tag != "Ramp")
+            if (poolPrefab.prefab.tag != "Ramp" && poolPrefab.prefab.tag != "RR")
                 obj.transform.rotation = transform.rotation * Quaternion.Euler(0, 0, 0);
 
             poolObject.Enqueue(obj);
@@ -93,7 +93,7 @@ public class ObstaclePool : MonoBehaviour
             count++;
         }
     }
-
+    private float pingPongY = 0;
     public void SetRodPooling(string key, Vector3 playerPos)
     {
         Queue<GameObject> objQ = poolDictionary[key];
@@ -101,8 +101,7 @@ public class ObstaclePool : MonoBehaviour
         //{
         if (objQ != null && objQ.Count > 0)
         {
-            GameObject obj = objQ.Dequeue();
-
+            GameObject obj = objQ.Dequeue();            
             //obj.SetActive(true);
             if (obj.transform.position.z < (playerPos.x - 15.0f))
             {

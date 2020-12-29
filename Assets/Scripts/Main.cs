@@ -1,27 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 public enum LEVEL
 {
-    LEVEL1 = 1,
-    LEVEL2 = 2,
-    LEVEL3 = 3,
-    LEVEL4 = 4,
-    LEVEL5 = 5,
-    LEVEL6 = 6,
-    LEVEL7 = 7
+    LEVEL1,
+    LEVEL2,
+    LEVEL3,
+    LEVEL4,
+    LEVEL5,
+    LEVEL6,
+    LEVEL7
 }
 
 public class Main : MonoBehaviour
-{ 
+{
     private GameObject game;
     private GameObject player;
     void Start()
     {
-        game = Resources.Load<GameObject>("Game");//GameObject.Find("Game").GetComponent<Game>();
-        Instantiate(game);
         player = GameObject.FindGameObjectWithTag("Player");
         SetLevel(LEVEL.LEVEL1.ToString(), player);
         //SetLevel(LEVEL.LEVEL3.ToString(), player);
@@ -34,8 +29,13 @@ public class Main : MonoBehaviour
 
     void SetLevel(string level, GameObject player)
     {
-        Game gameInstance = game.GetComponent<Game>();
-        gameInstance.InitializeStuff(player);
-        gameInstance.SetLevel(level);
+        game = Instantiate(Resources.Load<GameObject>("Game"));
+        CameraFollow camFollow = Camera.main.GetComponent<CameraFollow>();
+
+        //GameObject obj = Instantiate(game);
+        game.name = "Game";
+        Game gameScript = game.GetComponent<Game>();
+        gameScript.InitializeStuff(player);
+        gameScript.SetLevel(level);
     }
 }

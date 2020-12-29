@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ObjectMovement : MonoBehaviour
 {
@@ -13,6 +11,14 @@ public class ObjectMovement : MonoBehaviour
         {
             transform.position = Vector3.Lerp(new Vector3(transform.position.x, 1.2f, transform.position.z), new Vector3(transform.position.x, 0.8f, transform.position.z), Mathf.PingPong(Time.time * 1.0f, 1.0f));
             transform.position += new Vector3(0, 0, -5) * Time.deltaTime;
+        }
+        else if (gameObject.tag == "RR")
+        {
+            transform.position += new Vector3(0, 0, -5) * Time.deltaTime;
+            Debug.Log((-transform.localScale.x / 2 + transform.position.x / 2) + "  -----------  " + transform.name + " ----------- " + transform.GetComponentInChildren<Renderer>().bounds.center);
+            transform.RotateAround(transform.GetComponentInChildren<Renderer>().bounds.center, new Vector3(1, 0, 0), -1);
+            //transform.position = Vector3.Lerp(new Vector3(transform.position.x, 0.0f, transform.position.z), new Vector3(transform.position.x, 2.0f, transform.position.z), Mathf.PingPong(Time.time * 2.0f, 1.0f));
+
         }
         else
             transform.position -= new Vector3(0, 0, 10.0f) * Time.deltaTime;

@@ -19,16 +19,15 @@ public class Game : MonoBehaviour
 
     void SetLevel1()
     {
-        level = "Level1";
         const float maxHeight = 4.9f, minHeight = 0.6f;
         GameObject tree1 = LoadObject(level + "/Tree1");
         //GameObject tree2 = LoadObject(level + "/Tree2");
         GameObject mountain1 = LoadObject(level + "/Mountain1");
         //GameObject rocks = LoadObject(level + "/Rocks");
+        GameObject ramp = LoadObject(level + "/RampPoint");
+        GameObject traffic = LoadObject(level + "/RollingRock");
 
         GameObject boost = GameObject.Find("Boost");
-        GameObject traffic = GameObject.Find("BasicCar");
-        GameObject ramp = LoadObject(level + "/RampPoint");
         GameObject checkPoint = GameObject.Find("CheckPoint");
 
         sp.SetObjects(10, tree1, -20.0f, 30.0f, Random.Range(10.0f, 20.0f), 0, false);
@@ -36,11 +35,11 @@ public class Game : MonoBehaviour
         //sp.SetObjects(4, rocks, -8.0f, 8.0f, 50.0f, 2, false);
         sp.SetObjects(20, mountain1, -65.0f, 65.0f, 20.0f, 3, false);
 
-        Debug.Log(boost.name + " ||||||||||||||||||||||||||||||");
         op.SetObjects(5, traffic, -10.0f, 10.0f, 0.95f, 0);
         op.SetObjects(3, ramp, -6.0f, 6.0f, -0.8f, 1);
         op.SetObjects(5, boost, -10.0f, 10.0f, 1.6f, 2);
         player.GetComponent<PlayerMovement>().InitializeLevel(maxHeight, minHeight);
+
         //op.SetObjects(5, checkPoint, -10.0f, 10.0f, 2.5f, 2);
 
         //SetInstances(sp.getObsticleName());
@@ -181,6 +180,7 @@ public class Game : MonoBehaviour
 
     public void SetLevel(string level = "/Level1")
     {
+        this.level = level;
         sp = LoadObjectWithInstanciate(level + "/Scenery").GetComponent<SceneryPool>();
         op = LoadObjectWithInstanciate(level + "/Spawner").GetComponent<ObstaclePool>();
 
@@ -205,18 +205,17 @@ public class Game : MonoBehaviour
     private GameObject LoadObjectWithInstanciate(string path)
     {
         GameObject obj = Resources.Load<GameObject>(path);
-        Debug.Log(" ------------------ " + obj.name);
         return Instantiate(obj);
     }
     private GameObject LoadObject(string path)
     {
         GameObject obj = Resources.Load<GameObject>(path);
-        Debug.Log(" ------------------ " + obj.name);
         return obj;
     }
-    void FixedUpdate()
+    void Update()
     {
-        if (tra.localScale.x > 0)
-            tra.localScale -= new Vector3(0.08f, 0, 0) * Time.deltaTime;
+        // if (tra.localScale.x > 0)
+        //     tra.localScale -= new Vector3(0.08f, 0, 0) * Time.deltaTime;  
+
     }
 }

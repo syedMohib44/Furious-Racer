@@ -45,9 +45,6 @@ public class PlayerMovement : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
         rampObj = GameObject.FindGameObjectsWithTag("Ramp");
 
-
-        //Vector3 p1 = transform.position + (transform.position / 2) + Vector3.up * -transform.position.z * 0.5f;
-        //Vector3 p2 = p1 + Vector3.up * transform.position.z;
         Vector3 p1 = new Vector3(transform.position.x, 0, transform.position.z);
         Vector3 p2 = p1 - (Vector3.forward * 2);
         if (Physics.CapsuleCast(p1, p2, 2, transform.forward, out hit, 5))//if (Physics.SphereCast(transform.position, 2.0f, transform.forward, out hit, 2))//if (Physics.BoxCast(new Vector3(gameObject.transform.position.x / 2, gameObject.transform.position.y / 2, gameObject.transform.position.z / 2), transform.localScale, transform.forward, out hit, transform.rotation, 1))

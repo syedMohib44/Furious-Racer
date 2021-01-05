@@ -14,11 +14,9 @@ public class ObjectMovement : MonoBehaviour
         }
         else if (gameObject.tag == "RR")
         {
-            transform.position += new Vector3(0, 0, -5) * Time.deltaTime;
-            Debug.Log((-transform.localScale.x / 2 + transform.position.x / 2) + "  -----------  " + transform.name + " ----------- " + transform.GetComponentInChildren<Renderer>().bounds.center);
-            transform.RotateAround(transform.GetComponentInChildren<Renderer>().bounds.center, new Vector3(1, 0, 0), -1);
-            //transform.position = Vector3.Lerp(new Vector3(transform.position.x, 0.0f, transform.position.z), new Vector3(transform.position.x, 2.0f, transform.position.z), Mathf.PingPong(Time.time * 2.0f, 1.0f));
-
+            transform.position += new Vector3(0, 0, -15) * Time.deltaTime;
+            transform.RotateAround(transform.GetComponentInChildren<Renderer>().bounds.center, new Vector3(1, 0, 0), -2.5f);
+            transform.position = Vector3.Lerp(new Vector3(transform.position.x, 7.0f, transform.position.z), new Vector3(transform.position.x, 10.0f, transform.position.z), 0);
         }
         else
             transform.position -= new Vector3(0, 0, 10.0f) * Time.deltaTime;

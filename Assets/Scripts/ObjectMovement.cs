@@ -1,7 +1,12 @@
 ﻿using UnityEngine;
-
+using System.Collections.Generic;
 public class ObjectMovement : MonoBehaviour
 {
+    List<Vector4> v = new List<Vector4>();
+    void Start()
+    {
+        v.Add(new Vector4(0, 0, 0, 0));
+    }
     void FixedUpdate()
     {
 
@@ -14,9 +19,17 @@ public class ObjectMovement : MonoBehaviour
         }
         else if (gameObject.tag == "RR")
         {
+            if (v.Count <= gameObject.GetComponentInChildren<MeshFilter>().mesh.vertices.Length)
+                v.Add(new Vector4(0, 0, 0, 4));
+                
+            gameObject.GetComponentInChildren<MeshFilter>().mesh.SetVertexBufferData(v, 0, 0, v.Count);
+            // foreach (Mesh mesh in gameObject.GetComponent<Mesh>().)
+            // {
+
+            // }
             transform.position += new Vector3(0, 0, -15) * Time.deltaTime;
             transform.RotateAround(transform.GetComponentInChildren<Renderer>().bounds.center, new Vector3(1, 0, 0), -2.5f);
-            transform.position = Vector3.Lerp(new Vector3(transform.position.x, 7.0f, transform.position.z), new Vector3(transform.position.x, 10.0f, transform.position.z), 0);
+            //transform.position = Vector3.Lerp(new Vector3(transform.position.x, 7.0f, transform.position.z), new Vector3(transform.position.x, 10.0f, transform.position.z), 0);
         }
         else
             transform.position -= new Vector3(0, 0, 10.0f) * Time.deltaTime;
@@ -41,4 +54,3 @@ public class ObjectMovement : MonoBehaviour
         return point;
     }
 }
-

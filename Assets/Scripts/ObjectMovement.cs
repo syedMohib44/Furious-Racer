@@ -20,8 +20,8 @@ public class ObjectMovement : MonoBehaviour
         else if (gameObject.tag == "RR")
         {
             if (v.Count <= gameObject.GetComponentInChildren<MeshFilter>().mesh.vertices.Length)
-                v.Add(new Vector4(0, 0, 0, 4));
-                
+                v.Add(new Vector4(4, 4, 4, 4));
+
             gameObject.GetComponentInChildren<MeshFilter>().mesh.SetVertexBufferData(v, 0, 0, v.Count);
             // foreach (Mesh mesh in gameObject.GetComponent<Mesh>().)
             // {

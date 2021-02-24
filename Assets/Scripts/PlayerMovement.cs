@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody rb;
     private float rotateTo, tempRot, maxSpeed = 8f, accelertion = 0;
     private float maxHeight = 4.9f, minHeight = 0.6f;
     private int scored = 0;
@@ -54,6 +53,10 @@ public class PlayerMovement : MonoBehaviour
                 jumped = true;
                 transform.position = new Vector3(hit.transform.position.x, transform.position.y, transform.position.z);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(-25.0f, 0, 0), (50));
+            }
+            else if (hit.collider.tag == "RR")
+            {
+                Debug.Log("Hittt");
             }
         }
 

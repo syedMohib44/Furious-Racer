@@ -25,15 +25,15 @@ public class Game : MonoBehaviour
         GameObject mountain1 = LoadObject(level + "/Mountain1");
         //GameObject rocks = LoadObject(level + "/Rocks");
         GameObject ramp = LoadObject(level + "/RampPoint");
-        GameObject traffic = LoadObject(level + "/RollingRock");
+        GameObject rollingRocks = LoadObject(level + "/RollingRock");
 
-        GameObject boost = GameObject.Find("Boost");
-        GameObject checkPoint = GameObject.Find("CheckPoint");
+        GameObject boost = LoadObject("Boost");
+        GameObject checkPoint = LoadObject("CheckPoint");
 
         sp.SetObjects(10, tree1, -20.0f, 30.0f, Random.Range(10.0f, 20.0f), 0, false);
         sp.SetObjects(20, mountain1, -65.0f, 65.0f, 20.0f, 3, false);
 
-        op.SetObjects(5, traffic, -10.0f, 10.0f, 0.95f, 0);
+        op.SetObjects(5, rollingRocks, -10.0f, 10.0f, 0.0f, 0);
         op.SetObjects(3, ramp, -6.0f, 6.0f, -0.8f, 1);
         op.SetObjects(5, boost, -10.0f, 10.0f, 1.6f, 2);
         player.GetComponent<PlayerMovement>().InitializeLevel(maxHeight, minHeight);

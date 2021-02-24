@@ -29,6 +29,7 @@ public class ObstaclePool : MonoBehaviour
     {
         if (this.playerPos == null)
             playerPos = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>().position;
+            
         poolPrefab = new Pool();
         poolPrefab.prefab = prefab;
         poolPrefab.prefab.name = prefab.name;
@@ -81,9 +82,8 @@ public class ObstaclePool : MonoBehaviour
     }
 
 
-    void FixedUpdate()
+    void Update()
     {
-
         if (obsticleName != null && obsticleName.Count > 0)
         {
             if (count >= obsticleName.Count)
@@ -96,9 +96,7 @@ public class ObstaclePool : MonoBehaviour
     private float pingPongY = 0;
     public void SetRodPooling(string key, Vector3 playerPos)
     {
-        Queue<GameObject> objQ = poolDictionary[key];
-        //for (int i = 0; i < objQ.Count; i++)
-        //{
+        Queue<GameObject> objQ = poolDictionary[key];       
         if (objQ != null && objQ.Count > 0)
         {
             GameObject obj = objQ.Dequeue();            
@@ -113,6 +111,5 @@ public class ObstaclePool : MonoBehaviour
 
             poolDictionary[key].Enqueue(obj);
         }
-        //}
     }
 }

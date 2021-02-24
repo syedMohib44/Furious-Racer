@@ -9955,6 +9955,25 @@ MonoBehaviour:
   anim: {fileID: 0}
   rampObj:
   - {fileID: 0}
+--- !u!114 &5567970245721168139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9144601798670012012}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ce553d04b8cc2489e7e9e5be16f413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMoveDelta: 1
+  maxCollisionStrength: 50
+  YforceDamp: 0.1
+  demolutionRange: 0.5
+  impactDirManipulator: 1.29
+  MeshList:
+  - {fileID: 9144601798670815846}
 --- !u!1001 &9144601798669912262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10053,6 +10072,12 @@ GameObject:
 --- !u!4 &9144601798669521484 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400010, guid: f886177e4394e554e89ca91eaab51471,
+    type: 3}
+  m_PrefabInstance: {fileID: 9144601798669912262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!33 &9144601798670815846 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: 3300000, guid: f886177e4394e554e89ca91eaab51471,
     type: 3}
   m_PrefabInstance: {fileID: 9144601798669912262}
   m_PrefabAsset: {fileID: 0}

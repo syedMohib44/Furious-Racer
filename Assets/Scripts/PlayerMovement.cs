@@ -99,12 +99,7 @@ public class PlayerMovement : MonoBehaviour
                     rot = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, -20, -5), (50 * Time.deltaTime));
                 }
             }
-            else
-            {
-                if (transform.position.x < 0)
-                    transform.Translate(absVal * Time.deltaTime, 0, 0);
-            }
-
+           
             if (Input.GetKey(KeyCode.RightArrow))
             {
                 if (transform.position.x < rightLimit)
@@ -112,14 +107,7 @@ public class PlayerMovement : MonoBehaviour
                     transform.position = new Vector3(transform.position.x + absVal * Time.deltaTime, transform.position.y, transform.position.z);
                     rot = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 20, 5), (50 * Time.deltaTime));
                 }
-            }
-            else
-            {
-                if (transform.position.x > 0)
-                    transform.Translate(-absVal * Time.deltaTime, 0, 0);
-                else
-                    transform.position = new Vector3(transform.position.x, 0.5f, transform.position.z);
-            }
+            }        
         }
 
 #elif UNITY_ANDROID

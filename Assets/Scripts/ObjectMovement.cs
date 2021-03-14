@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
+
 public class ObjectMovement : MonoBehaviour
 {
     void FixedUpdate()
@@ -11,6 +11,10 @@ public class ObjectMovement : MonoBehaviour
         {
             transform.position = Vector3.Lerp(new Vector3(transform.position.x, 1.2f, transform.position.z), new Vector3(transform.position.x, 0.8f, transform.position.z), Mathf.PingPong(Time.time * 1.0f, 1.0f));
             transform.position += new Vector3(0, 0, -5) * Time.deltaTime;
+        }
+        else if (gameObject.tag == "Note")
+        {
+            transform.localScale += new Vector3(0, 0, 1);
         }
         // else if (gameObject.tag == "RR")
         // {

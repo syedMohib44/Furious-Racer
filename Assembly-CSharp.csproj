@@ -41,29 +41,29 @@
      <Compile Include="Assets\Scripts\Game.cs" />
      <Compile Include="Assets\Scripts\IpooledObject.cs" />
      <Compile Include="Assets\Scripts\Main.cs" />
+     <Compile Include="Assets\Scripts\Namespace.cs" />
+     <Compile Include="Assets\Scripts\NotePool.cs" />
+     <Compile Include="Assets\Scripts\NoteSpawner.cs" />
      <Compile Include="Assets\Scripts\ObjectMovement.cs" />
      <Compile Include="Assets\Scripts\ObstaclePool.cs" />
      <Compile Include="Assets\Scripts\ObstacleSpawner.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Player_Camera_Controller.cs" />
-     <Compile Include="Assets\Scripts\ProceduralMesh.cs" />
      <Compile Include="Assets\Scripts\SceneryPool.cs" />
      <Compile Include="Assets\Scripts\Scripts\Container.cs" />
      <Compile Include="Assets\Scripts\Scripts\Fret.cs" />
      <Compile Include="Assets\Scripts\Scripts\Hitbox.cs" />
      <Compile Include="Assets\Scripts\Scripts\Killbox.cs" />
      <Compile Include="Assets\Scripts\Scripts\MenuManager.cs" />
-     <Compile Include="Assets\Scripts\Scripts\Namespace.cs" />
      <Compile Include="Assets\Scripts\Scripts\NoteMovement.cs" />
-     <Compile Include="Assets\Scripts\Scripts\NoteSpawner.cs" />
      <Compile Include="Assets\Scripts\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Scripts\RandomAnim.cs" />
      <Compile Include="Assets\Scripts\Scripts\Scoring.cs" />
-     <Compile Include="Assets\Scripts\Scripts\SongManager.cs" />
      <Compile Include="Assets\Scripts\Scripts\Stomp.cs" />
      <Compile Include="Assets\Scripts\Scripts\TerrainManager.cs" />
      <Compile Include="Assets\Scripts\Scripts\TutorialManager.cs" />
      <Compile Include="Assets\Scripts\Scripts\Visualization.cs" />
+     <Compile Include="Assets\Scripts\SongManager.cs" />
      <Compile Include="Assets\Scripts\cube.cs" />
      <Compile Include="Assets\Scripts\sceneManager.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
@@ -262,6 +262,9 @@
     <Reference Include="UnityEditor">
         <HintPath>C:/Program Files/Unity/2019.4.8f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+        <HintPath>D:/Tools and Apps/Unity Projects/Furious-Racer/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Analytics.Editor">
         <HintPath>D:/Tools and Apps/Unity Projects/Furious-Racer/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
@@ -270,9 +273,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
         <HintPath>D:/Tools and Apps/Unity Projects/Furious-Racer/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-        <HintPath>D:/Tools and Apps/Unity Projects/Furious-Racer/Assets/JsonDotNet/Assemblies/Standalone/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
         <HintPath>C:/Program Files/Unity/2019.4.8f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

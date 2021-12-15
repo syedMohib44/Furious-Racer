@@ -42,7 +42,6 @@
      <Compile Include="Assets\Scripts\IpooledObject.cs" />
      <Compile Include="Assets\Scripts\Main.cs" />
      <Compile Include="Assets\Scripts\Namespace.cs" />
-     <Compile Include="Assets\Scripts\NotePool.cs" />
      <Compile Include="Assets\Scripts\NoteSpawner.cs" />
      <Compile Include="Assets\Scripts\ObjectMovement.cs" />
      <Compile Include="Assets\Scripts\ObstaclePool.cs" />

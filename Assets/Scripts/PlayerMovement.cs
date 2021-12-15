@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
         absVal = 10.0f;
         airPS = GameObject.Find("AirParticles").GetComponent<Transform>();
         airPS.gameObject.SetActive(false);
+        audio.Play();
+        audio.Pause();
     }
     Vector2 limitXY;
     float absVal, rotateVal;
@@ -33,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     bool accelerated = false;
     public GameObject[] rampObj;
     private bool jumped = false;
+    public AudioSource audio;
     void Update()
     {
         if (transform.position.z > 2.0f)
@@ -58,6 +61,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 Debug.Log("Hittt");
             }
+            else if (hit.collider.tag == "Rocks")
+            {
+                audio.Play();
+            }
+        }
+        else
+        {
+            audio.Pause();
         }
 
 
@@ -99,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
                     rot = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, -20, -5), (50 * Time.deltaTime));
                 }
             }
-           
+
             if (Input.GetKey(KeyCode.RightArrow))
             {
                 if (transform.position.x < rightLimit)
@@ -107,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
                     transform.position = new Vector3(transform.position.x + absVal * Time.deltaTime, transform.position.y, transform.position.z);
                     rot = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(0, 20, 5), (50 * Time.deltaTime));
                 }
-            }        
+            }
         }
 
 #elif UNITY_ANDROID
